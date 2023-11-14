@@ -7,7 +7,7 @@ import headerComp from "@/components/HeaderComponent.vue"
 
 export default {
     components: {
-        headerComp, // Correction ici : headerComp au lieu de headerComp
+        headerComp,
     }
 }
 </script>
