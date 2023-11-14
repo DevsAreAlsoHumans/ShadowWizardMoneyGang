@@ -8,13 +8,15 @@
 
         <transition name="slide">
             <ul v-if="showMenu" class="menu">
-                <li style="cursor:pointer" v-on:click="disconnect()">Se déconnecter</li>
+                <li style="cursor:pointer" @click="disconnect()">Se déconnecter</li>
             </ul>
         </transition>
+
         <div class="logo">
-            <img src="@/assets/logo.jpg">
+            <img src="@/assets/logo.jpg" alt="Logo">
         </div>
-        <div class="sectionTitle">
+
+        <div class="section-title">
             <h1>TEST H1</h1>
         </div>
     </div>
@@ -32,14 +34,24 @@ export default {
             this.showMenu = !this.showMenu;
         },
         disconnect() {
-            localStorage.removeItem("userID")
-            this.$router.push("login")
+            localStorage.removeItem("userID");
+            this.$router.push("login");
         }
     }
 };
 </script>
   
 <style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    padding: 20px;
+    /* Increased padding */
+    box-shadow: 0px 5px 0px rgb(207, 189, 189);
+}
+
 .burger-menu {
     margin: 1%;
     box-shadow: #333;
@@ -63,16 +75,17 @@ export default {
 
 .menu {
     position: fixed;
-    margin-top: 5%;
-    top: 0;
-    left: 0;
+    top: 50%;
+    /* Center the menu vertically */
+    left: 50%;
+    /* Center the menu horizontally */
+    transform: translate(-50%, -50%);
     width: 250px;
-    height: 100%;
     background-color: #fff;
     box-shadow: 0px 5px 0px rgb(207, 189, 189);
-
     z-index: 998;
-    padding: 20px;
+    padding: 40px;
+    /* Increased padding */
 }
 
 .slide-enter-active,
@@ -85,46 +98,19 @@ export default {
     transform: translateX(-100%);
 }
 
-ul {
-    list-style-type: none;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 35%;
-    min-height: 35px;
-    box-shadow: 0px 5px 0px rgb(207, 189, 189);
+.logo {
+    width: 30%;
+    /* Increased logo width */
+    text-align: center;
+    /* Center the logo */
 }
 
 .logo img {
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
 }
 
-.logo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    height: 50%;
-    max-width: fit-content;
-}
-
-.sectionTitle {
-    margin-left: 5%;
+.section-title {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -133,3 +119,4 @@ ul {
     align-content: center;
 }
 </style>
+  
