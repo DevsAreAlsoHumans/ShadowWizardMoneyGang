@@ -4,7 +4,6 @@
     </div>
 </template>
 
-
 <script>
 import MainHub from "@/components/MainHubComponent.vue"
 

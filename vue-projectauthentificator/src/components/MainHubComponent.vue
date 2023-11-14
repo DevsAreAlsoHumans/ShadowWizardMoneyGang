@@ -1,13 +1,13 @@
 <template>
-    <hearderComp />
+    <headerComp />
 </template>
 <script>
 import axios from 'axios';
-import hearderComp from "@/components/HeaderComponent.vue"
+import headerComp from "@/components/HeaderComponent.vue"
 
 export default {
     components: {
-        hearderComp,
+        headerComp, // Correction ici : headerComp au lieu de headerComp
     }
 }
 </script>
