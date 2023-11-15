@@ -32,10 +32,10 @@ Avant de commencer, assurez-vous de répondre aux exigences suivantes :
     
 3. Installez les dépendances :
 
-  ```bash
+    ```bash
    npm install
-   
-4. Lancez le serveur de développement :
+    
+4. Lancez le serveur de développement : 
 
    ```bash
    npm run serve
