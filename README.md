@@ -24,19 +24,18 @@ Avant de commencer, assurez-vous de répondre aux exigences suivantes :
 
    ```bash
    git clone https://github.com/votre-nom/authentificator.git
-
-2. Accédez au répertoire du projet :
    
-  ```bash
-   cd authentificator
+2. Accédez au répertoire du projet :
 
-4. Installez les dépendances :
+    ```bash
+   cd authentificator
+    
+3. Installez les dépendances :
 
   ```bash
    npm install
-  
    
-5. Lancez le serveur de développement :
+4. Lancez le serveur de développement :
 
    ```bash
    npm run serve
