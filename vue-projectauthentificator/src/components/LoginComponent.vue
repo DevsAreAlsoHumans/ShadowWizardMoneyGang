@@ -1,13 +1,11 @@
 <template>
-    <headerComp />
     <div class="login-page">
         <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="name" />
+            <form class="login-form">
+                <input type="text" placeholder="username" />
                 <input type="password" placeholder="password" />
-                <input type="text" placeholder="email address" />
-                <button>create</button>
-                <p class="message">Already registered? <a v-on:click="redirectHome">Sign In</a></p>
+                <button>login</button>
+                <p class="message">Not registered? <a v-on:click="redirectRegister">Create an account</a></p>
             </form>
         </div>
     </div>
@@ -17,13 +15,14 @@
 <script>
 import headerComp from "@/components/HeaderComponent.vue"
 
+
 export default {
     data() {
 
     },
     methods: {
-        redirectHome() {
-            this.$router.push('/')
+        redirectRegister() {
+            this.$router.push('/register');
         },
     },
     components: {
@@ -44,7 +43,6 @@ export default {
 }
 
 .form {
-    height: toggle;
     position: relative;
     z-index: 1;
     background: #FFFFFF;
