@@ -14,13 +14,13 @@ Ce dépôt contient deux projets distincts : un projet Vue.js et un projet Java.
    - Ouvrez une fenêtre de terminal.
    - Exécutez la commande suivante pour cloner le dépôt :
      ```bash
-     git clone <URL_du_dépôt>
+     git clone https://github.com/DevsAreAlsoHumans/ShadowWizardMoneyGang.git
      ```
 
 2. **Accéder à la branche PROJET-JAVA :**
    - Changez de répertoire vers le dossier du dépôt cloné :
      ```bash
-     cd <nom_du_dépôt>
+     cd connectProject
      ```
    - Changez de branche vers `PROJET-JAVA` :
      ```bash
