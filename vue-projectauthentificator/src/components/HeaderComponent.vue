@@ -7,7 +7,7 @@
                         <img src="/login.svg" class="login" />
                         <span class="logo-text">Authenticator</span>
                     </router-link>
-                    <button class="nav-toggle" @click="toggleNav">
+                    <button class="nav-toggle">
                         <span class="toggle--icon"></span>
                     </button>
                 </section>
@@ -50,6 +50,7 @@ container.addEventListener("click", (e) => {
     }
 });
 
+
 </script>
   
 <style>
@@ -71,7 +72,7 @@ container.addEventListener("click", (e) => {
 
     --header: 3.5rem;
     --full-width: 100%;
-    --padding-space: calc(var(--full-width) - 2rem);
+    --padding-space: calc(var(--full-width) - 1rem);
     --max-width: 80rem;
     --min-width: 22.5rem;
 
