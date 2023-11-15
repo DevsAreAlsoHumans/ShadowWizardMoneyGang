@@ -1,56 +1,52 @@
 <template>
-    <div class="container">
-        <header class="site-header">
-            <div class="header__content--flow">
-                <section class="header-content--left">
-                    <router-link to="/" class="brand-logo">
-                        <img src="/login.svg" class="login" />
-                        <span class="logo-text">Authenticator</span>
-                    </router-link>
-                    <button class="nav-toggle">
-                        <span class="toggle--icon"></span>
-                    </button>
-                </section>
-                <section class="header-content--right">
-                    <nav class="header-nav" role="navigation">
-                        <ul :class="{ 'nav__list': true, 'expanded': isExpanded }">
-                            <li class="list-item">
-                                <router-link to="/" class="nav__link">Home</router-link>
-                            </li>
-                            <li class="list-item">
-                                <router-link to="/register" class="nav__link">Register</router-link>
-                            </li>
-                            <li class="list-item">
-                                <router-link to="/login" class="nav__link">Login</router-link>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-            </div>
-        </header>
-    </div>
+    <header class="site-header">
+        <div class="header__content--flow">
+            <section class="header-content--left">
+                <router-link to="/" class="brand-logo">
+                    <img src="/login.svg" class="login" />
+                    <span class="logo-text">Authenticator</span>
+                </router-link>
+                <button class="nav-toggle">
+                    <span class="toggle--icon"></span>
+                </button>
+            </section>
+            <section class="header-content--right">
+                <nav class="header-nav" role="navigation">
+                    <ul :class="{ 'nav__list': true, 'expanded': isExpanded }">
+                        <li class="list-item">
+                            <p v-on:click="this.redirectHome">Home</p>
+                        </li>
+                        <li class="list-item">
+                            <p v-on:click="$router.push('/register')">Register</p>
+                        </li>
+                        <li class="list-item">
+                            <p v-on:click="this.redirectLogin">Login</p>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </header>
 </template>
 
 <script>
-const container = document.querySelector(".container");
-const primaryNav = document.querySelector(".nav__list");
-const toggleButton = document.querySelector(".nav-toggle");
+export default{
+    date(){
 
-toggleButton.addEventListener("click", () => {
-    const isExpanded = primaryNav.getAttribute("aria-expanded");
-    primaryNav.setAttribute(
-        "aria-expanded",
-        isExpanded === "false" ? "true" : "false"
-    );
-});
-
-container.addEventListener("click", (e) => {
-    if (!primaryNav.contains(e.target) && !toggleButton.contains(e.target)) {
-        primaryNav.setAttribute("aria-expanded", "false");
-    }
-});
-
-
+    },
+    methods :{
+        redirectHome(){
+            this.$router.push('/')
+        },
+        redirectLogin(){
+            this.$router.push('/login')
+        },
+        redirectRegister(){
+            console.log("HIIIIII")
+            this.$router.push('/register')
+        },
+    },
+}
 </script>
   
 <style>

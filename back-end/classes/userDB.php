@@ -23,6 +23,4 @@ class UserDB extends DBHandler{
         return $idUSer;
     }
 }
-
-
 ?>

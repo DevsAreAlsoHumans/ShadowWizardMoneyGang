@@ -37,16 +37,19 @@ switch($request_method){
                         $user->addUser();
                         echo(true);
                         break;
+                    default :
+                        echo "Wrong request type";
+                        break;
                 }
             }
         }
         break;
     case "GET" : 
         if(count($request_URI)>2){
-
+            echo "ca existe pas encore";
         } else {
             $result = $DB->getInDB("*","user");
-            print_r($result);
+            echo(json_encode($result));
         }
         break;
 
