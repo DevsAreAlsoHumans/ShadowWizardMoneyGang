@@ -2,29 +2,41 @@
     <headerComp />
     <div class="login-page">
         <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="name" />
-                <input type="password" placeholder="password" />
-                <input type="text" placeholder="email address" />
-                <button>create</button>
+            <div class="register-form">
+                <input type="text" v-model="username" id="username" placeholder="Username">
+                <input type="text" v-model="password" id="password" placeholder="Password" />
+                <input type="text" v-model="mail" id="mail" placeholder="Email" />
+                <button v-on:click="register">Create</button>
                 <p class="message">Already registered? <a v-on:click="redirectHome">Sign In</a></p>
-            </form>
+            </div>
         </div>
     </div>
 </template>
 
-
 <script>
 import headerComp from "@/components/HeaderComponent.vue"
-
+import axios from 'axios'
 export default {
     data() {
-
+        return {
+            username: "",
+            password: "",
+            mail: "",
+        }
     },
     methods: {
         redirectHome() {
             this.$router.push('/')
         },
+        async register() {
+            const data = {
+                "username": this.username,
+                "password": this.password,
+                "mail": this.mail
+            }
+            const req = await axios.post("http://localhost/register", data)
+            const res = await req.data
+        }
     },
     components: {
         headerComp,

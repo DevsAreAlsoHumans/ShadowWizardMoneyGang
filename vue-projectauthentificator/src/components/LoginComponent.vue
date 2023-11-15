@@ -1,29 +1,41 @@
 <template>
     <div class="login-page">
         <div class="form">
-            <form class="login-form">
-                <input type="text" placeholder="username" />
-                <input type="password" placeholder="password" />
-                <button>login</button>
+            <div class="login-form">
+                <input type="text" v-model="username" id="username" placeholder="Username">
+                <input type="text" v-model="password" id="password" placeholder="Password" />
+                <button v-on:click="login">Login</button>
                 <p class="message">Not registered? <a v-on:click="redirectRegister">Create an account</a></p>
-            </form>
+            </div>
         </div>
     </div>
 </template>
 
 
 <script>
+import axios from 'axios';
 import headerComp from "@/components/HeaderComponent.vue"
-
 
 export default {
     data() {
-
+        return {
+            username: "",
+            password: "",
+        }
     },
     methods: {
         redirectRegister() {
             this.$router.push('/register');
         },
+        async login() {
+            const data = {
+                "username": this.username,
+                "password": this.password,
+            }
+            const req = await axios.post("http://localhost/login", data)
+            const res = await req.data
+            localStorage.setItem("idUser", JSON.stringify(res));
+        }
     },
     components: {
         headerComp,
@@ -50,7 +62,10 @@ export default {
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    outline: 1px solid var(--border-clr);
+    border-radius: var(--bd-radius);
+    padding-inline: var(--padding);
+    box-shadow: var(--shadow);
 }
 
 .form input {

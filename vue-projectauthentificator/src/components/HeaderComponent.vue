@@ -2,7 +2,7 @@
     <header class="site-header">
         <div class="header_content">
             <a v-on:click="redirectHome" class="logo-text">
-                Authenticator
+                Authentificator
             </a>
         </div>
     </header>
@@ -11,7 +11,7 @@
 <script>
 export default {
     data() {
-
+        return {};
     },
     methods: {
         redirectHome() {
@@ -52,6 +52,7 @@ export default {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 body {
@@ -60,10 +61,10 @@ body {
     min-block-size: 100vh;
     font-family: system-ui;
     background: linear-gradient(45deg, hsl(185, 26%, 72%), hsl(224, 66%, 82%));
+
 }
 
 .site-header {
-
     --padding: 1rem;
     --header-margin: 5vh;
     --shadow: 0 0.1875em 0.3125em #0003, 0 0.125em 0.5em #0002;
@@ -77,20 +78,10 @@ body {
 }
 
 .header_content {
-    display: flex;
-    flex-direction: column;
-    gap: 0 clamp(3.5rem, -24.14rem + 61.43vw, 25rem);
-}
-
-.header_content>* {
-    flex-grow: 1;
-    height: var(--header);
-    width: calc((45rem - var(--full-width) - (var(--padding) * 2)) * 999);
-}
-
-.logo-text {
     color: var(--text-primary);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
+    text-align: center;
+    cursor: pointer;
 }
 </style>

@@ -3,6 +3,7 @@ import MainHub from "@/views/MainHubPage.vue";
 import RedirectMain from "@/components/RedirectMain.vue";
 import RegisterVue from "@/views/RegisterVue.vue";
 import LoginVue from "@/views/LoginVue.vue";
+import ProfilVue from "@/views/ProfilVue.vue";
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginVue,
+  },
+  {
+    path: "/profil",
+    name: "profil",
+    component: ProfilVue,
   },
   // route dynamique pour rediriger la page d'accueil
   {
