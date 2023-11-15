@@ -1,11 +1,14 @@
 <template>
-    <LoginComponent />
+    <div>
+        <LoginComponent />
+    </div>
 </template>
 
 <script>
 import LoginComponent from '../components/LoginComponent.vue';
 export default {
     data() {
+        return {};
     },
     methods: {
 

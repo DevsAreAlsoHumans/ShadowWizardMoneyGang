@@ -1,13 +1,15 @@
 <template>
-    <headerComp />
-    <div class="login-page">
-        <div class="form">
-            <div class="register-form">
-                <input type="text" v-model="username" id="username" placeholder="Username">
-                <input type="text" v-model="password" id="password" placeholder="Password" />
-                <input type="text" v-model="mail" id="mail" placeholder="Email" />
-                <button v-on:click="register">Create</button>
-                <p class="message">Already registered? <a v-on:click="redirectHome">Sign In</a></p>
+    <div>
+        <headerComp />
+        <div class="login-page">
+            <div class="form">
+                <div class="register-form">
+                    <input type="text" v-model="username" id="username" placeholder="Username">
+                    <input type="text" v-model="password" id="password" placeholder="Password" />
+                    <input type="text" v-model="mail" id="mail" placeholder="Email" />
+                    <button v-on:click="register">Create</button>
+                    <p class="message">Already registered? <a v-on:click="redirectHome">Sign In</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -22,7 +24,7 @@ export default {
             username: "",
             password: "",
             mail: "",
-        }
+        };
     },
     methods: {
         redirectHome() {

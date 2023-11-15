@@ -1,6 +1,8 @@
 <template>
-    <headerComp />
-    <LoginComponent />
+    <div>
+        <headerComp />
+        <LoginComponent />
+    </div>
 </template>
 <script>
 import axios from 'axios';
@@ -11,7 +13,11 @@ export default {
     components: {
         headerComp,
         LoginComponent,
-    }
+    },
+    data() {
+        return {};
+    },
+    methods: {},
 }
 </script>
 <style></style>
