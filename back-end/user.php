@@ -23,7 +23,7 @@ switch($request_method){
                         else{
                             $encryptPasword = $dataUser[0]["password"];
                             if(password_verify($password,$encryptPasword)){
-                                echo(json_encode($dataUser));
+                                echo(json_encode($dataUser[0]));
                             }else{
                                 echo("false");
                             }
@@ -46,7 +46,12 @@ switch($request_method){
         break;
     case "GET" : 
         if(count($request_URI)>2){
-            echo "ca existe pas encore";
+            if(intval($request_URI[2]==0)){
+
+            }else{
+                $result = $DB->getInDB("*","user","id",$request_URI[2]);
+                echo json_encode($result[0]);
+            }
         } else {
             $result = $DB->getInDB("*","user");
             echo(json_encode($result));
