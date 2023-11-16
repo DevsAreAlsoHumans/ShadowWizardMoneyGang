@@ -32,9 +32,10 @@ export default {
                 "username": this.username,
                 "password": this.password,
             }
-            const req = await axios.post("http://localhost/login", data)
+            const req = await axios.post("http://shadowwizardmoneygang.localhost/user/login", data)
             const res = await req.data
             localStorage.setItem("idUser", JSON.stringify(res));
+            console.log(JSON.stringify(res))
         }
     },
     components: {

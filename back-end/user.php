@@ -49,7 +49,7 @@ switch ($request_method) {
             if (intval($request_URI[2] == 0)) {
             } else {
                 $result = $DB->getInDB("*", "user", "id", $request_URI[2]);
-                echo json_encode($result[0]);
+                echo json_encode($result);
             }
         } else {
             $result = $DB->getInDB("*", "user");
