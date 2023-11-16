@@ -1,13 +1,20 @@
 <template>
-<LoginComponent />
+    <div>
+        <LoginComponent />
+    </div>
 </template>
 
 <script>
 import LoginComponent from '../components/LoginComponent.vue';
-export default{
-    components : {
+export default {
+    data() {
+        return {};
+    },
+    methods: {
+
+    },
+    components: {
         LoginComponent,
     }
 }
-
 </script>
