@@ -36,7 +36,7 @@ export default {
                 "password": this.password,
                 "mail": this.mail
             }
-            const req = await axios.post("http://localhost/register", data)
+            const req = await axios.post("http://localhost/user/register", data)
             const res = await req.data
         }
     },

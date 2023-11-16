@@ -27,14 +27,17 @@ export default {
         redirectRegister() {
             this.$router.push('/register');
         },
+
+        
         async login() {
             const data = {
                 "username": this.username,
                 "password": this.password,
             }
-            const req = await axios.post("http://localhost/login", data)
+            const req = await axios.post("http://localhost/user/login", data)
             const res = await req.data
             localStorage.setItem("idUser", JSON.stringify(res));
+            this.$router.push("/profil")
         }
     },
     components: {
