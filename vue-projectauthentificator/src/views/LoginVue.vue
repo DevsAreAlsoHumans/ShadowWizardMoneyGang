@@ -1,11 +1,11 @@
 <template>
     <div>
-        <RegisterComponent />
+        <LoginComponent />
     </div>
 </template>
 
 <script>
-import RegisterComponent from '../components/RegisterComponent.vue';
+import LoginComponent from '../components/LoginComponent.vue';
 export default {
     data() {
         return {};
@@ -14,7 +14,7 @@ export default {
 
     },
     components: {
-        RegisterComponent,
+        LoginComponent,
     }
 }
 </script>

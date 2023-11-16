@@ -17,19 +17,29 @@ const routes = [
     component: MainHub,
   },
   {
-    path : "/register",
-    name : "register",
-    component : RegisterVue,
+    path: "/register",
+    name: "register",
+    component: RegisterVue,
   },
   {
-    path : "/login",
-    name : "login",
-    component : LoginVue,
+    path: "/login",
+    name: "login",
+    component: LoginVue,
   },
   {
-    path : "/profil",
-    name : "profil",
-    component : ProfilVue,
+    path: "/profil",
+    name: "profil",
+    component: ProfilVue,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginVue,
+  },
+  {
+    path: "/profil",
+    name: "profil",
+    component: ProfilVue,
   },
   // route dynamique pour rediriger la page d'accueil
   {

@@ -1,6 +1,6 @@
 <template>
-    <MainHub />
     <div>
+        <MainHub />
     </div>
 </template>
 

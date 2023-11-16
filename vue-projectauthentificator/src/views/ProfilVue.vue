@@ -1,19 +1,20 @@
 <template>
-<ProfilComponent />
+    <div>
+        <ProfilComponent />
+    </div>
 </template>
-
+    
 <script>
 import ProfilComponent from "@/components/ProfilComponent.vue"
-export default{
-    data(){
-        return{
-
+export default {
+    data() {
+        return {
         }
     },
-    methods : {
-        
+    methods: {
+
     },
-    components : {
+    components: {
         ProfilComponent,
     }
 }
