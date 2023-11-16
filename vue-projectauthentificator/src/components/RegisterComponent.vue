@@ -38,6 +38,13 @@ export default {
             }
             const req = await axios.post("http://shadowwizardmoneygang.localhost/user/register", data)
             const res = await req.data
+            // test si true
+            if (res == 1) {
+                this.$router.push('/mainHub');
+                // afficher message réussite
+            } else {
+                console.log('ERREUR SIGN IN');
+            }
         }
     },
     components: {

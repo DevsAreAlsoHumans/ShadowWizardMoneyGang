@@ -34,8 +34,12 @@ export default {
             }
             const req = await axios.post("http://shadowwizardmoneygang.localhost/user/login", data)
             const res = await req.data
-            localStorage.setItem("idUser", JSON.stringify(res));
-            console.log(JSON.stringify(res))
+
+            // regarder dans l'objet si j'ai l'id
+            if (Object.keys(res).length > 0) {
+                localStorage.setItem("idUser", JSON.stringify(res));
+                this.$router.push('/profil');
+            }
         }
     },
     components: {
