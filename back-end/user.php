@@ -1,5 +1,4 @@
 <?php
-header('Content-type: text/javascript');
 require_once("classes/dbHandler.php");
 require_once("classes/userDB.php");
 require_once("./header.php");
@@ -50,7 +49,7 @@ switch ($request_method) {
                 
             } else {
                 $result = $DB->getInDB("*", "user", "id", $request_URI[2]);
-                if(count($result)>0)echo json_encode($result[0]);
+                if(count($result)>0)echo json_encode($result);
                 else echo "false";
             }
         } else {
@@ -67,7 +66,7 @@ switch ($request_method) {
                         $value = password_hash($value,PASSWORD_BCRYPT);
                     }
                     $res = $DB->updateInDB("user",$key,$value,"id",$request_URI[2]);
-                    if($res!=true)$correctUpdate = false
+                    if($res!=true)$correctUpdate = false;
                 } 
                 echo $correctUpdate;
             }

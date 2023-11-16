@@ -7,6 +7,7 @@
                     <input type="text" v-model="username" id="username" placeholder="Username">
                     <input type="text" v-model="password" id="password" placeholder="Password" />
                     <input type="text" v-model="mail" id="mail" placeholder="Email" />
+                    <p>{{ errorMessage }}</p>
                     <button v-on:click="register">Create</button>
                     <p class="message">Already registered? <a v-on:click="redirectHome">Sign In</a></p>
                 </div>
@@ -24,6 +25,7 @@ export default {
             username: "",
             password: "",
             mail: "",
+            errorMessage : "",
         };
     },
     methods: {
@@ -38,6 +40,13 @@ export default {
             }
             const req = await axios.post("http://localhost/user/register", data)
             const res = await req.data
+            // test si true
+            if (res == 1) {
+                this.$router.push('/mainHub');
+                // afficher message réussite
+            } else {
+                this.errorMessage = "Error while creating your account"
+            }
         }
     },
     components: {

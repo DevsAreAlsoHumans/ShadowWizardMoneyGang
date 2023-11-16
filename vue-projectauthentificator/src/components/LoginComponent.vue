@@ -4,6 +4,7 @@
             <div class="login-form">
                 <input type="text" v-model="username" id="username" placeholder="Username">
                 <input type="text" v-model="password" id="password" placeholder="Password" />
+                <p>{{ errorMessage }}</p>
                 <button v-on:click="login">Login</button>
                 <p class="message">Not registered? <a v-on:click="redirectRegister">Create an account</a></p>
             </div>
@@ -21,6 +22,7 @@ export default {
         return {
             username: "",
             password: "",
+            errorMessage : "",
         }
     },
     methods: {
@@ -36,8 +38,13 @@ export default {
             }
             const req = await axios.post("http://localhost/user/login", data)
             const res = await req.data
-            localStorage.setItem("idUser", JSON.stringify(res));
-            this.$router.push("/profil")
+            // regarder dans l'objet si j'ai l'id
+            if(res.id!=null){
+                localStorage.setItem("idUser", JSON.stringify(res));
+                this.$router.push('/profil');
+            }else if(res==false){
+                this.errorMessage = "Identifiant ou mot de passe incorrect"
+            }
         }
     },
     components: {
