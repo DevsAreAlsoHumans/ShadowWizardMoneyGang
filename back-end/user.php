@@ -35,7 +35,7 @@ switch ($request_method) {
                         $password = $decode["password"];
                         $user = new UserDB($username, $mail, $password);
                         $user->addUser();
-                        echo (true);
+                        echo ("true");
                         break;
                     default:
                         echo "Wrong request type";
@@ -47,13 +47,33 @@ switch ($request_method) {
     case "GET":
         if (count($request_URI) > 2) {
             if (intval($request_URI[2] == 0)) {
+                
             } else {
                 $result = $DB->getInDB("*", "user", "id", $request_URI[2]);
-                echo json_encode($result[0]);
+                if(count($result)>0)echo json_encode($result[0]);
+                else echo "false";
             }
         } else {
             $result = $DB->getInDB("*", "user");
             echo (json_encode($result));
         }
+        break;
+    case "PUT" : 
+        if(count($request_URI) >2){
+            if(intval($request_URI[2])!=0){
+                $correctUpdate = true;
+                foreach($decode as $key => $value) { 
+                    if($key == "password"){
+                        $value = password_hash($value,PASSWORD_BCRYPT);
+                    }
+                    $res = $DB->updateInDB("user",$key,$value,"id",$request_URI[2]);
+                    if($res!=true)$correctUpdate = false
+                } 
+                echo $correctUpdate;
+            }
+        }
+        break;
+    default : 
+        
         break;
 }

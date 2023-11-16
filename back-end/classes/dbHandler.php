@@ -149,10 +149,10 @@ class DBHandler
     public function updateInDB(string $table, string $rowToUpdate, mixed $newValue, string $tableCondition, string $condition)
     {
         $db = $this->connect();
-        $sql = $db->prepare("UPDATE `$table` SET `$rowToUpdate` = $newValue WHERE $tableCondition = ?;");
-        echo("UPDATE `$table` SET `$rowToUpdate` = $newValue WHERE $tableCondition = $condition");
-        $sql->execute([$condition]);
+        $sql = $db->prepare("UPDATE `$table` SET `$rowToUpdate` = '$newValue' WHERE $tableCondition = ?;");
+        $res = $sql->execute([$condition]);
         mysqli_close($db);
+        return $res;
     }
 
     /**
@@ -179,12 +179,4 @@ class DBHandler
         $stmt->execute([$condition]);
         mysqli_close($db) ;
     }
-
-    /**
-     * This function retrieves all distinct dates from a database table and returns them in descending
-     * order.
-     * 
-     * @return // an array of distinct dates in the format of 'YYYY-MM-DD' from the 'call' table in
-     * descending order.
-     */
 }
