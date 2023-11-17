@@ -20,7 +20,7 @@ class DBHandler
         $this->host = 'localhost';
     }
 
-    public function connect()
+    private function connect()
     {
         try {
             $link = mysqli_connect($this->host, $this->user, $this->password, $this->name);

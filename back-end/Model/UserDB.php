@@ -25,8 +25,5 @@ class UserDB extends DBHandler{
         return $idUSer;
         
     }
-    public function getUsername() : string{
-        return $this->username;
-    }
 }
 ?>
