@@ -43,7 +43,6 @@ export default {
             // test si true
             if (res == 1) {
                 this.$router.push('/mainHub');
-                // afficher message réussite
             } else {
                 this.errorMessage = "Error while creating your account"
             }

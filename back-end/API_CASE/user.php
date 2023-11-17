@@ -1,6 +1,7 @@
 <?php
-require_once("classes/dbHandler.php");
-require_once("classes/userDB.php");
+namespace Model;
+require_once("Model/DBHandler.php");
+require_once("Model/userDB.php");
 require_once("./header.php");
 
 $DB = new DBHandler();

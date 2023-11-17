@@ -18,6 +18,9 @@ export default {
         return {};
     },
     methods: {},
+    mounted(){
+        if(localStorage.getItem("idUser")!="undefined")this.$router.push("/profil")
+    }
 }
 </script>
 <style></style>

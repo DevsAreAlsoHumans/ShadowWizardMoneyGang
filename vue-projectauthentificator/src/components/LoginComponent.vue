@@ -50,8 +50,8 @@ export default {
     components: {
         headerComp,
     },
-    mounted() {
-
+    mounted(){
+        if(localStorage.getItem("idUser")!="undefined")this.$router.push("/profil")
     }
 }
 </script>

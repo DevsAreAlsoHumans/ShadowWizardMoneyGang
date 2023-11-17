@@ -11,12 +11,14 @@
 <script>
 export default {
     data() {
-        return {};
+        return {
+            idUser : localStorage.idUser.id,
+        };
     },
     methods: {
         redirectHome() {
             this.$router.push('/')
-        }
+        },
     },
 }
 </script>
