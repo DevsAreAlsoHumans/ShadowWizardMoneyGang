@@ -10,7 +10,7 @@ $_SESSION["request"] = explode("/",$_SERVER["REQUEST_URI"]);
 $request = $_SESSION["request"];
 switch($request[1]) {
         case "user" :
-            require(__DIR__ . "/user.php");
+            require(__DIR__ . "/API_CASE/user.php");
             break;   
         default:
             break;
