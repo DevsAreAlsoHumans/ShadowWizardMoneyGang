@@ -1,5 +1,7 @@
 <?php 
-require_once("dbHandler.php");
+namespace Model;
+require_once("DBHandler.php");
+
 
 class UserDB extends DBHandler{
     private string $username;
@@ -21,6 +23,10 @@ class UserDB extends DBHandler{
         ];
         $idUSer = $this->insert($arrayData,"user");
         return $idUSer;
+        
+    }
+    public function getUsername() : string{
+        return $this->username;
     }
 }
 ?>

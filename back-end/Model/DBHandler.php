@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 /* The DBHandler class sets up the database connection parameters. */
 
 /**
@@ -39,7 +40,7 @@ class DBHandler
      * 
      * return the ID of the newly created object in the database.
      */
-    public function insert(array $data, string $table)
+    public function insert(array $data, string $table) : int
     {
         $con = $this->connect();
         if ($con == false) {

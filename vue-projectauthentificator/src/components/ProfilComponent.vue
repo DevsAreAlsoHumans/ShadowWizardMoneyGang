@@ -2,7 +2,7 @@
     <div id="card">
         <p id="title">Profil</p>
         <div id="content">
-            <img id="avatar" width="100" height="100" src="../../public/avatar3D.jpg" alt="avatar 3D">
+            <img id="avatar" width="100" height="100" src="/avatar3D.jpg" alt="avatar 3D">
             <svg width="142px" height="142px" viewBox="0 0 24 24" fill="none" id="avatar-svg">
                 <defs>
                     <linearGradient id="AvatarGradient">
@@ -25,7 +25,7 @@
 
             </div>
             <div id="group-btn">
-                <p class="btn pointer" id="follow-btn">Edit profil</p>
+                <p class="btn pointer" id="follow-btn" v-on:click="displayPasswordDiv = !displayPasswordDiv">Edit profil</p>
                 <p class="btn pointer" v-on:click="disconnect" id="message-btn">Logout</p>
             </div>
             <div id="socials">
@@ -47,7 +47,7 @@
                     </path>
                 </svg>
             </div>
-            <div class="newPassword">
+            <div v-if="displayPasswordDiv" class="newPassword">
                 <label>Nouveau mot de passe</label>
                 <input v-model="newPassword" type="password">
                 <label>Confirmer le mot de passe</label>
@@ -70,6 +70,7 @@ export default {
             newPassword : "",
             confirmNewPassword : "",
             errorMessageNewPassword : "",
+            displayPasswordDiv : false,
         }
     },
     methods: {

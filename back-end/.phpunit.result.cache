@@ -1,0 +1,1 @@
+{"version":1,"defects":{"UserDBTest::testGetMail":8,"MyApp\\UserDBTest::testGetMail":8,"Model\\UserDBTest::testGetMail":8,"Model\\UserDBTest::testGetUsername":7},"times":{"UserDBTest::testGetMail":0.017,"MyApp\\UserDBTest::testGetMail":0.018,"Model\\UserDBTest::testGetMail":0.099,"Model\\UserDBTest::testGetUsername":0.104}}

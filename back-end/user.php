@@ -49,7 +49,7 @@ switch ($request_method) {
                 
             } else {
                 $result = $DB->getInDB("*", "user", "id", $request_URI[2]);
-                if(count($result)>0)echo json_encode($result);
+                if(count($result)>0)echo json_encode($result[0]);
                 else echo "false";
             }
         } else {
